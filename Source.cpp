@@ -1,4 +1,4 @@
-//HomeWork C++ #4.1
+//HomeWork C++ #4.2
 
 #include <iostream>
 #include <windows.h>
