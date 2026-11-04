@@ -3,5 +3,5 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="EvgenSN_HW_CoreCplus.vcxproj" />
+  <Project Path="EvgenSN_HW_CoreCplus.vcxproj" Id="66893d2b-4d9f-4cfd-9dd0-c4c8bf1e5220" />
 </Solution>
