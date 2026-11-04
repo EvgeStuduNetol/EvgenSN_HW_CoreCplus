@@ -1,31 +1,27 @@
-//HomeWork C++ #3.2
+//HomeWork C++ #4.1
 
 #include <iostream>
-#include <string>
-#include <Windows.h>
+#include <windows.h>
 
 int main()
 {
-	double a, b, c;
+	SetConsoleCP(65001);
+	SetConsoleOutputCP(65001);
 
-	std::cout << "Enter your first number: ";
-	std::cin >> a;
+	int number = 0;
+	int sum = 0;
 
-	std::cout << "Enter your second number: ";
-	std::cin >> b;
+	do
+	{
+		std::cout << "Введите целое число или число '0', чтобы закончить:" << std::endl;
+		std::cin >> number;
 
-	std::cout << "Enter your third number: ";
-	std::cin >> c;
+		sum = sum + number;
+	}
 
+	while (number != 0);
 
-	int max, mid, min;
-	
-	max = (a > b) ? ((a > c) ? a : c) : ((b > c) ? b : c);
-	min = (a < b) ? ((a < c) ? a : c) : ((b < c) ? b : c);
-	mid = a + b + c - max - min;
-
-	std::cout << "Result: " << max << " " << mid << " " << min << std::endl;
-
+	std::cout << "Сумма: " << sum << std::endl;
 
 	return 0;
 }
