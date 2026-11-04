@@ -1,49 +1,42 @@
-//HomeWork C++ #5.4
+//HomeWork C++ #6.1
 
 #include <iostream>
 #include <windows.h>
 #include <cstdlib>
 
-int main()
+int sum(int a, int b)
 {
-	SetConsoleCP(65001);
-	SetConsoleOutputCP(65001);
+	return a + b;
+}
 
-	int array[10];
+int diff(int a, int b)
+{
+	return a - b;
+}
 
-	for (int i = 0; i < 10; i++)
-	{
-		array[i] = rand() % 101;
-	}
+int multiplication(int a, int b)
+{
+	return a * b;
+}
 
-	std::cout << "Массив до сортировки: ";
-	for (int i = 0; i < 10;i++)
-	{
-		std::cout << array[i] << " ";
-	}
-	std::cout << std::endl;
+double division(double a, double b)
+{
+	return a / b;
+}
 
-	std::cout << "Массив после сортировки: ";
-	for (int k = 0; k < 9; k++)
-	{
-		int swap_counter = 0;
-		for (int i = 9; i > 0; i--)
-		{
-			if (array[i] < array[i - 1])
-			{
-				std::swap(array[i], array[i - 1]);
-				swap_counter++;
-			}
-		}
-		if (swap_counter == 0)
-		{
-			break;
-		}
-	}
+int main(int argc, char** argv)
+{
+	int a = 5, b = 10;
 
-	for (int i = 0; i < 10;i++)
-	{
-		std::cout << array[i] << " ";
-	}
+	int s = sum(a, b);
+	int dif = diff(a, b);
+	int mult = multiplication(a, b);
+	double div = division(a, b);
+
+	std::cout << a << " + " << b << " = " << s << std::endl;
+	std::cout << a << " - " << b << " = " << dif << std::endl;
+	std::cout << a << " * " << b << " = " << mult << std::endl;
+	std::cout << a << " / " << b << " = " << div << std::endl;
+
 	return 0;
 }
