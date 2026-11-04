@@ -1,14 +1,15 @@
-//HomeWork C++ #7.2
+//HomeWork C++ #8.1
 
 #include <iostream>
 #include <windows.h>
 #include <cstdlib>
 
-void swap(int& a, int& b)
+void counting_function()
 {
-	int c = a;
-	a = b;
-	b = c;
+	static int score = 0;
+	score++;
+	std::cout << "Количество вызовов функции counting_function() : " << score << std::endl;
+
 }
 
 int main(int argc, char** argv)
@@ -16,13 +17,10 @@ int main(int argc, char** argv)
 	SetConsoleCP(65001);
 	SetConsoleOutputCP(65001);
 
-	int a = 5, b = 8;
 
-	std::cout << "a = " << a << ", b = " << b << std::endl;
+	for (int i = 0; i < 15; i++)
+	{
+		counting_function();
+	}
 
-	swap(a, b);
-
-	std::cout << "a = " << a << ", b = " << b << std::endl;
-
-	return 0;
 }
