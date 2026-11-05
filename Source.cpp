@@ -1,53 +1,27 @@
-//HomeWork C++ #8.2
+//HomeWork C++ #9.1
 
 #include <iostream>
-#include <windows.h>
-#include <cstdlib>
 
-namespace S
+void print(int* arr, int size) 
 {
-	int calc(int x, int y)
-	{
-		return x + y;
-	}
+    for (int i = 0; i < size; i++) 
+    {
+        std::cout << arr[i] << " ";
+    }
+
+    std::cout << std::endl;
 }
 
-namespace V
-{
-	int calc(int x, int y)
-	{
-		return x - y;
-	}
-}
+int main() {
+    int arr1[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+    int arr2[] = { 6, 5, 4, 8 };
+    int arr3[] = { 1, 4, 3, 7, 5 };
+    int arr4[] = { 9, 5 , 8, 4, 6, 2 };
 
-namespace U
-{
-	int calc(int x, int y)
-	{
-		return x * y;
-	}
-}
+    print(arr1, 9);
+    print(arr2, 4);
+    print(arr3, 5);
+    print(arr4, 6);
 
-namespace D
-{
-	int calc(int x, int y)
-	{
-		return x / y;
-	}
-}
-
-int main(int argc, char** argv)
-{
-	SetConsoleCP(65001);
-	SetConsoleOutputCP(65001);
-
-	int x = 6, y = 9;
-
-	std::cout << "Сложение: " << S::calc(x, y) << std::endl;
-	std::cout << "Вычитание: " << V::calc(x, y) << std::endl;
-	std::cout << "Умножение: " << U::calc(x, y) << std::endl;
-	std::cout << "Деление: " << D::calc(x, y) << std::endl;
-
-	return 0;
-
+    return 0;
 }
