@@ -1,35 +1,38 @@
-//HomeWork C++ #10.1
+//HomeWork C++ #10.2
 
 #include <iostream>
 #include <windows.h>
 
-int main() 
-{
-    SetConsoleCP(65001);
-    SetConsoleOutputCP(65001);
-
-    int size;
-
-    std::cout << "Введите размер массива: ";
-    std::cin >> size;
-
-    int* arr = new int[size];
-
-    for (int i = 0; i < size; i++) 
+    
+    double* create_array(int size) 
     {
-        std::cout << "arr[" << i << "] = ";
-        std::cin >> arr[i];
+        double* arr = new double[size]();
+        return arr;
     }
 
-    std::cout << "Введённый массив: ";
-    for (int i = 0; i < size; i++) 
+    int main() 
     {
-        std::cout << arr[i] << " ";
+        SetConsoleCP(65001);
+        SetConsoleOutputCP(65001);
+
+
+        int size;
+
+        std::cout << "Введите размер массива: ";
+        std::cin >> size;
+
+        double* arr = create_array(size);
+
+        std::cout << "Массив: ";
+        for (int i = 0; i < size; i++) {
+            std::cout << arr[i] << " ";
+        }
+        std::cout << std::endl;
+
+        delete[] arr;
+
+        return 0;
     }
-    std::cout << std::endl;
 
-    delete[] arr;
-
-    return 0;
-}
+  
 
