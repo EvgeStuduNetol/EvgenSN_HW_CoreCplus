@@ -1,38 +1,71 @@
-//HomeWork C++ #10.2
+//HomeWork C++ #10.3
 
 #include <iostream>
 #include <windows.h>
 
-    
-    double* create_array(int size) 
+int** create_two_dim_array(int rows, int cols) 
+{
+    int** arr = new int* [rows];
+    for (int i = 0; i < rows; i++) 
     {
-        double* arr = new double[size]();
-        return arr;
+        arr[i] = new int[cols];
     }
+    return arr;
+}
 
-    int main() 
+void fill_two_dim_array(int** arr, int rows, int cols) 
+{
+    for (int i = 0; i < rows; i++) 
     {
-        SetConsoleCP(65001);
-        SetConsoleOutputCP(65001);
+        for (int j = 0; j < cols; j++) 
+        {
+            arr[i][j] = (i + 1) * (j + 1);
+        }
+    }
+}
 
-
-        int size;
-
-        std::cout << "Введите размер массива: ";
-        std::cin >> size;
-
-        double* arr = create_array(size);
-
-        std::cout << "Массив: ";
-        for (int i = 0; i < size; i++) {
-            std::cout << arr[i] << " ";
+void print_two_dim_array(int** arr, int rows, int cols) 
+{
+    for (int i = 0; i < rows; i++) 
+    {
+        for (int j = 0; j < cols; j++) 
+        {
+            std::cout << arr[i][j] << "\t";
         }
         std::cout << std::endl;
-
-        delete[] arr;
-
-        return 0;
     }
+}
+
+void delete_two_dim_array(int** arr, int rows, int cols) 
+{
+    for (int i = 0; i < rows; i++) 
+    {
+        delete[] arr[i];
+    }
+    delete[] arr;
+}
+
+int main() 
+{
+    SetConsoleCP(65001);
+    SetConsoleOutputCP(65001);
+
+    int rows, cols;
+
+    std::cout << "Введите количество строк: ";
+    std::cin >> rows;
+    std::cout << "Введите количество столбцов: ";
+    std::cin >> cols;
+
+    std::cout << "Таблица умножения:" << std::endl;
+
+    int** arr = create_two_dim_array(rows, cols);
+                fill_two_dim_array(arr, rows, cols);
+                print_two_dim_array(arr, rows, cols);
+                delete_two_dim_array(arr, rows, cols);
+
+    return 0;
+}
 
   
 
