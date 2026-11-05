@@ -1,27 +1,23 @@
-//HomeWork C++ #9.1
+//HomeWork C++ #9.2
 
 #include <iostream>
 
-void print(int* arr, int size) 
+void swap(int* a, int* b) 
 {
-    for (int i = 0; i < size; i++) 
-    {
-        std::cout << arr[i] << " ";
-    }
-
-    std::cout << std::endl;
+    int temp = *a;
+    *a = *b;
+    *b = temp;
 }
 
-int main() {
-    int arr1[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-    int arr2[] = { 6, 5, 4, 8 };
-    int arr3[] = { 1, 4, 3, 7, 5 };
-    int arr4[] = { 9, 5 , 8, 4, 6, 2 };
+int main() 
+{
+    int a = 5, b = 8;
 
-    print(arr1, 9);
-    print(arr2, 4);
-    print(arr3, 5);
-    print(arr4, 6);
+    std::cout << "a = " << a << ", b = " << b << std::endl;
+
+    swap(&a, &b);
+
+    std::cout << "a = " << a << ", b = " << b << std::endl;
 
     return 0;
 }
